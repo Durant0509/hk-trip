@@ -114,6 +114,14 @@
   .ticket .ph{background:#faf3ee;border:2px dashed #e4cdbe;border-radius:12px;
               padding:30px 16px;text-align:center;color:#b58a6f;font-size:14px;margin-top:10px}
   .ticket .note{font-size:13px;color:#555;margin-top:8px;line-height:1.6}
+  .qrgrid{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+  .qrcell{flex:1;min-width:130px;max-width:46%;text-align:center}
+  .qrcell img{width:100%;border:1px solid var(--line);border-radius:12px;background:#fff}
+  .qrcell .cap{font-size:12px;color:var(--muted);margin-top:4px}
+  .ticket details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+  .ticket summary{font-size:14px;font-weight:700;cursor:pointer;color:var(--red)}
+  .ticket details .body{font-size:13px;color:#444;line-height:1.7;margin-top:8px}
+  .ticket details .body b{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -325,7 +333,7 @@
         <div class="st">📍 迪士尼站</div>
         <div class="sp">🎠 香港迪士尼樂園</div>
         <div class="items">整天玩 · 記得傍晚回市區 → 機場<br>✈️ 晚班機 21:05 起飛（T2），建議 <b>18:30 前</b>離開</div>
-        <div class="exit">🎁 <b>官方門票贈禮兌換</b>：進園後到 <b>美國小鎮大街「市鎮會堂 City Hall / 遊客服務中心」</b>出示官方購票憑證兌換（就在大門進去後左手邊）。<br>👉 <b>建議一入園先去換</b>，人少、也順路。實際櫃位以入園當天官方 App / 大門旁指示為準。</div>
+        <div class="exit">🎁 <b>免費禮品兌換</b>（任一）：大街精品店（美國小鎮大街）或 安仔玩具箱（反斗奇兵大本營）<br>🍟 <b>HK$50 餐飲折扣券</b>：指定小食亭 / 多間餐廳（詳見「票券」頁 → 迪士尼門票 → 展開兌換清單）<br>⚡ 快速通關 5 選 3，記得先排熱門的（灰熊山、鐵甲奇俠）<br>👉 建議一入園先換禮品、規劃快通</div>
         <div class="stoplinks">
           <a target="_blank" href="https://www.hongkongdisneyland.com/zh-hk/maps/">🗺️ 官方園區地圖</a>
           <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=香港迪士尼樂園">📍 樂園位置</a>
@@ -354,30 +362,61 @@
 <div class="wrap">
   <section style="margin-top:22px">
     <h2>🎫 我的票券</h2>
-    <div class="foodnote">出示時把螢幕調到最亮。以下是佔位卡，把票券 QR / 憑證截圖給我，我幫你貼上。</div>
+    <div class="foodnote">出示時把螢幕調到最亮 🔆 · 點 QR 圖可放大</div>
 
     <div class="ticket">
-      <h3>🎠 迪士尼樂園門票</h3>
-      <div class="note">官方票 · 含贈禮兌換（見 Day 3 · 市鎮會堂）</div>
-      <div class="ph" id="qr-disney">📷 迪士尼門票 QR / 憑證放這</div>
+      <h3>🎠 迪士尼門票</h3>
+      <div class="note">官方票 2 張（1 張門票中的第 1 張 ×2）</div>
+      <div class="qrgrid">
+        <div class="qrcell"><a href="tickets/disney-ticket-1.png" target="_blank"><img src="tickets/disney-ticket-1.png" alt="迪士尼門票1"></a><div class="cap">門票 ① 0105001900019967014</div></div>
+        <div class="qrcell"><a href="tickets/disney-ticket-2.png" target="_blank"><img src="tickets/disney-ticket-2.png" alt="迪士尼門票2"></a><div class="cap">門票 ② 9071033616170014019</div></div>
+      </div>
+      <details>
+        <summary>🎁 免費禮品 / 餐飲折扣兌換地點</summary>
+        <div class="body">
+          <b>免費指定特別禮品</b>（任一）：<br>
+          • 大街精品店（美國小鎮大街內）<br>
+          • 安仔玩具箱（反斗奇兵大本營內）<br><br>
+          <b>HK$50 餐飲折扣券</b>兌換：指定戶外小食亭 / 以下餐廳——<br>
+          快餐：領航者薈館(探險世界) · 笑匠歡宴坊、皇室宴會廳(幻想世界) · 火箭餐廳、彗星餐廳(明日世界) · 阿德爾港畔餐廳(魔雪奇緣世界)<br>
+          餐桌：大街餐廳 by Coca-Cola(美國小鎮大街) · 大冒險家餐廳(迷離莊園)
+        </div>
+      </details>
     </div>
 
     <div class="ticket">
-      <h3>✈️ 電子機票 / 登機證</h3>
-      <div class="note">去 7/22 T1 10:05 · 回 7/24 T2 21:05</div>
-      <div class="ph" id="qr-flight">📷 機票 QR / 訂位代號放這</div>
+      <h3>⚡ 迪士尼快速通關</h3>
+      <div class="note">電子票 2 張 · SP00884-C0696</div>
+      <div class="qrgrid">
+        <div class="qrcell"><a href="tickets/fastpass-1.png" target="_blank"><img src="tickets/fastpass-1.png" alt="快速通關1"></a><div class="cap">電子票 1/2</div></div>
+        <div class="qrcell"><a href="tickets/fastpass-2.png" target="_blank"><img src="tickets/fastpass-2.png" alt="快速通關2"></a><div class="cap">電子票 2/2</div></div>
+      </div>
+      <details>
+        <summary>⚡ 使用規則：5 選 3，各優先通行 1 次</summary>
+        <div class="body">
+          可於下列 5 個設施選 <b>3 個</b>，各尊享優先通行 1 次：<br>
+          (1) 灰熊山極速礦車<br>
+          (2) 迷離大宅<br>
+          (3) 鐵甲奇俠飛行之旅（友邦呈獻）<br>
+          (4) 蟻俠與黃蜂女：擊戰特攻！<br>
+          (5) 小小世界
+        </div>
+      </details>
     </div>
 
     <div class="ticket">
-      <h3>🏨 飯店訂房憑證</h3>
-      <div class="note">香港康得思酒店 Cordis</div>
-      <div class="ph" id="qr-hotel">📷 訂房 QR / 確認信放這</div>
-    </div>
-
-    <div class="ticket">
-      <h3>➕ 其他票券</h3>
-      <div class="note">機場快線 / 景點門票 / eSIM…</div>
-      <div class="ph" id="qr-other">📷 其他票券放這</div>
+      <h3>📶 eSIM 網卡（2 張）</h3>
+      <div class="note">到港前 / 落地掃碼安裝 · 出發前先裝好較保險</div>
+      <div class="qrgrid">
+        <div class="qrcell"><a href="tickets/esim-1.png" target="_blank"><img src="tickets/esim-1.png" alt="eSIM1"></a><div class="cap">SN …490685</div></div>
+        <div class="qrcell"><a href="tickets/esim-2.png" target="_blank"><img src="tickets/esim-2.png" alt="eSIM2"></a><div class="cap">SN …490684</div></div>
+      </div>
+      <details>
+        <summary>📶 安裝小提醒</summary>
+        <div class="body">
+          一人一張，掃 QR 或用安裝按鈕。<b>建議出發前在有網路時先裝好</b>，落地開啟數據漫遊即可用。iPhone：設定→行動網路→加入 eSIM。
+        </div>
+      </details>
     </div>
   </section>
   <footer>票券頁 · 資料只存在你手機，別讓別人看到螢幕 🔒</footer>

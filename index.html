@@ -94,6 +94,26 @@
             display:block;box-shadow:0 2px 8px rgba(0,0,0,.04)}
   footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
   .heart{color:var(--red)}
+
+  /* top tab switcher (行程 / 票券) */
+  .tabs{display:flex;gap:8px;max-width:560px;margin:14px auto 0;padding:0 16px}
+  .tabs button{flex:1;padding:12px;border:0;border-radius:14px;font-size:16px;
+               font-weight:700;cursor:pointer;background:#fff;color:#555;
+               border:1.5px solid var(--line);transition:.15s}
+  .tabs button.on{background:var(--red);color:#fff;border-color:var(--red);
+                  box-shadow:0 3px 10px rgba(215,38,61,.28)}
+  .page{display:none}
+  .page.on{display:block}
+
+  /* tickets */
+  .ticket{background:var(--card);border:1px solid var(--line);border-radius:16px;
+          padding:16px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .ticket h3{margin:0 0 4px;font-size:17px;display:flex;align-items:center;gap:6px}
+  .ticket .qr{width:100%;max-width:280px;margin:10px auto 0;display:block;
+              border:1px solid var(--line);border-radius:12px}
+  .ticket .ph{background:#faf3ee;border:2px dashed #e4cdbe;border-radius:12px;
+              padding:30px 16px;text-align:center;color:#b58a6f;font-size:14px;margin-top:10px}
+  .ticket .note{font-size:13px;color:#555;margin-top:8px;line-height:1.6}
 </style>
 </head>
 <body>
@@ -104,6 +124,13 @@
   <div class="sub">🧳 康得思酒店 · 兩人 · 🎠 迪士尼</div>
 </header>
 
+<div class="tabs">
+  <button id="tab-trip" class="on" onclick="showPage('trip')">🗺️ 行程</button>
+  <button id="tab-tix" onclick="showPage('tix')">🎫 票券</button>
+</div>
+
+<!-- ===== 行程頁 ===== -->
+<div class="page on" id="page-trip">
 <div class="wrap">
 
   <nav id="nav">
@@ -254,8 +281,17 @@
       <div class="stop">
         <div class="st">📍 中環站</div>
         <div class="sp">叮叮車 + Bakehouse 蛋撻</div>
-        <div class="items">🚋 坐叮叮車看街景 · 🥚 排隊蛋撻</div>
+        <div class="items">🚋 你的玩法：先坐到 <b>上環（西港城）</b>，再一路往東玩回來吃飯</div>
+        <div class="exit">🚋 <b>叮叮車注意事項</b><br>
+          • <b>後門上車、前門下車付款</b>（別站錯門）<br>
+          • 一律 HK$3（八達通嗶一下，無論坐多遠）<br>
+          • 想看街景坐<b>上層最前排</b><br>
+          • 看車頭牌的<b>終點站</b>認方向（西：堅尼地城/石塘咀；東：筲箕灣/北角/跑馬地）<br>
+          • ⭐ 想拍經典畫面可多坐到<b>北角「春秧街」</b>——電車開進露天菜市場人群，全港獨有（在銅鑼灣再往東，方向與回程相反，看時間取捨）
+        </div>
         <div class="stoplinks">
+          <a target="_blank" href="https://www.hktramways.com/tc/">🚋 電車官網</a>
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=北角 春秧街 Chun Yeung Street">📍 春秧街</a>
           <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bakehouse Central Hong Kong">📍 Bakehouse 蛋撻</a>
         </div>
       </div>
@@ -270,10 +306,12 @@
       </div>
       <div class="stop">
         <div class="st">📍 尖沙咀海旁</div>
-        <div class="sp">維多利亞港</div>
-        <div class="items">🌃 幻彩詠香江燈光秀（每晚 20:00）</div>
+        <div class="sp">維多利亞港 · 幻彩詠香江</div>
+        <div class="items">🌃 每晚 <b>20:00</b> 燈光秀（約10分鐘）</div>
+        <div class="exit">👀 最佳觀賞點：<b>尖沙咀星光大道 / 文化中心海旁</b>（正對港島天際線，燈光秀主看台這側）· 尖東站 J 出口海旁</div>
         <div class="stoplinks">
-          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=尖沙咀星光大道 Victoria Harbour">📍 維多利亞港</a>
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=尖沙咀星光大道 Avenue of Stars Hong Kong">📍 星光大道</a>
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=香港文化中心 海旁 幻彩詠香江">📍 文化中心海旁</a>
         </div>
       </div>
     </div>
@@ -286,8 +324,13 @@
       <div class="stop">
         <div class="st">📍 迪士尼站</div>
         <div class="sp">🎠 香港迪士尼樂園</div>
-        <div class="items">整天玩 · 記得傍晚回市區 → 機場<br>✈️ 晚班機 21:05 起飛（T2），建議 18:30 前離開</div>
-        <a class="maplink" target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E9%A6%99%E6%B8%AF%E8%BF%AA%E5%A3%AB%E5%B0%BC%E6%A8%82%E5%9C%92">📍 迪士尼地圖</a>
+        <div class="items">整天玩 · 記得傍晚回市區 → 機場<br>✈️ 晚班機 21:05 起飛（T2），建議 <b>18:30 前</b>離開</div>
+        <div class="exit">🎁 <b>官方門票贈禮兌換</b>：進園後到 <b>美國小鎮大街「市鎮會堂 City Hall / 遊客服務中心」</b>出示官方購票憑證兌換（就在大門進去後左手邊）。<br>👉 <b>建議一入園先去換</b>，人少、也順路。實際櫃位以入園當天官方 App / 大門旁指示為準。</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.hongkongdisneyland.com/zh-hk/maps/">🗺️ 官方園區地圖</a>
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=香港迪士尼樂園">📍 樂園位置</a>
+        </div>
+        <div class="ph" style="margin-top:10px">🗺️ 想放園區導覽圖？把官方 App 或園區地圖截圖傳給我，我幫你貼在這裡（離線也看得到，不迷路）</div>
       </div>
     </div>
   </section>
@@ -304,7 +347,53 @@
   </footer>
 
 </div>
+</div><!-- /page-trip -->
 
+<!-- ===== 票券頁 ===== -->
+<div class="page" id="page-tix">
+<div class="wrap">
+  <section style="margin-top:22px">
+    <h2>🎫 我的票券</h2>
+    <div class="foodnote">出示時把螢幕調到最亮。以下是佔位卡，把票券 QR / 憑證截圖給我，我幫你貼上。</div>
+
+    <div class="ticket">
+      <h3>🎠 迪士尼樂園門票</h3>
+      <div class="note">官方票 · 含贈禮兌換（見 Day 3 · 市鎮會堂）</div>
+      <div class="ph" id="qr-disney">📷 迪士尼門票 QR / 憑證放這</div>
+    </div>
+
+    <div class="ticket">
+      <h3>✈️ 電子機票 / 登機證</h3>
+      <div class="note">去 7/22 T1 10:05 · 回 7/24 T2 21:05</div>
+      <div class="ph" id="qr-flight">📷 機票 QR / 訂位代號放這</div>
+    </div>
+
+    <div class="ticket">
+      <h3>🏨 飯店訂房憑證</h3>
+      <div class="note">香港康得思酒店 Cordis</div>
+      <div class="ph" id="qr-hotel">📷 訂房 QR / 確認信放這</div>
+    </div>
+
+    <div class="ticket">
+      <h3>➕ 其他票券</h3>
+      <div class="note">機場快線 / 景點門票 / eSIM…</div>
+      <div class="ph" id="qr-other">📷 其他票券放這</div>
+    </div>
+  </section>
+  <footer>票券頁 · 資料只存在你手機，別讓別人看到螢幕 🔒</footer>
+</div>
+</div><!-- /page-tix -->
+
+<script>
+// ---- 頁籤切換 ----
+function showPage(which){
+  document.getElementById('page-trip').classList.toggle('on', which==='trip');
+  document.getElementById('page-tix').classList.toggle('on', which==='tix');
+  document.getElementById('tab-trip').classList.toggle('on', which==='trip');
+  document.getElementById('tab-tix').classList.toggle('on', which==='tix');
+  window.scrollTo(0,0);
+}
+</script>
 <script>
 // ---- 美食資料 ----
 const foods = [

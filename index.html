@@ -81,11 +81,9 @@
           text-decoration:none;padding:14px;border-radius:14px;font-size:16px;
           font-weight:700;margin-bottom:10px}
   .bigmap.alt{background:var(--sea)}
-  .line{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
-  .line:last-child{border:0}
-  .dot{flex:0 0 auto;width:14px;height:14px;border-radius:50%;margin-top:5px}
-  .line .ln{font-size:15px;font-weight:700}
-  .line .ss{font-size:13px;color:#555;margin-top:1px}
+  .mapbox{background:#fff;border:1px solid var(--line);border-radius:16px;
+          overflow:hidden;height:70vh;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .mapbox iframe{width:100%;height:100%;border:0;display:block}
   footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
   .heart{color:var(--red)}
 </style>
@@ -159,22 +157,12 @@
 
   <!-- 地鐵 -->
   <section id="metro">
-    <h2>🚇 港鐵 MTR</h2>
-    <a class="bigmap" target="_blank" href="https://www.mtr.com.hk/ch/customer/services/system_map.html">🗺️ 官方港鐵路線圖（點開放大）</a>
-    <a class="bigmap alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=MTR+station+near+me">📍 用 Google Maps 查最近的站 / 轉乘</a>
-    <div class="foodnote">小技巧：在 Google Maps 直接搜「A 站 到 B 站」會給你轉乘與月台。八達通嗶進嗶出最方便。</div>
-    <div class="card">
-      <div style="font-weight:700;margin-bottom:6px;font-size:15px">這趟會用到的站</div>
-      <div class="line"><span class="dot" style="background:#e2231a"></span><div><div class="ln">荃灣綫（紅）</div><div class="ss">旺角(飯店) · 尖沙咀 · 中環一帶轉乘</div></div></div>
-      <div class="line"><span class="dot" style="background:#0075c2"></span><div><div class="ln">港島綫（藍）</div><div class="ss">銅鑼灣 · 天后（華姐清湯腩）· 堅尼地城（新興食家）· 中環</div></div></div>
-      <div class="line"><span class="dot" style="background:#00888a"></span><div><div class="ln">屯馬綫（棕）</div><div class="ss">宋皇臺（聯發茶餐廳 · 地茂館）</div></div></div>
-      <div class="line"><span class="dot" style="background:#f38b00"></span><div><div class="ln">迪士尼綫（粉）</div><div class="ss">欣澳站轉乘 → 迪士尼站（Day 3）</div></div></div>
-      <div class="line"><span class="dot" style="background:#00888a"></span><div><div class="ln">機場快綫（綠）</div><div class="ss">機場 ⇄ 香港/九龍站（進出市區最快）</div></div></div>
+    <h2>🚇 港鐵路線圖</h2>
+    <div class="mapbox">
+      <iframe src="https://www.mtr.com.hk/system_map/route-map/route-map.html"
+              loading="lazy" title="港鐵路線圖"></iframe>
     </div>
-    <div class="card">
-      <div style="font-weight:700;margin-bottom:4px">🚋 叮叮車（Day 2）</div>
-      <div class="ss" style="font-size:14px;color:#555">港島北岸電車，上車後座、下車前付款，看街景超有味道。</div>
-    </div>
+    <a class="bigmap" target="_blank" href="https://www.mtr.com.hk/system_map/route-map/route-map.html">🗺️ 圖看不清楚？點這開全螢幕官方圖</a>
   </section>
 
   <!-- Day 1 -->

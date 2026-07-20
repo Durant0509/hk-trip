@@ -11,6 +11,7 @@
     --muted:#8a8a8a; --line:#f0e4dc; --gold:#e8a13a; --sea:#0d7a8a;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
   body{margin:0;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
        background:var(--paper);color:var(--ink);line-height:1.6;padding-bottom:40px}
   a{color:inherit}
@@ -33,7 +34,7 @@
         text-decoration:none;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.04)}
   nav a.on{background:var(--red);color:#fff;border-color:var(--red)}
 
-  section{margin-top:22px}
+  section{margin-top:22px;scroll-margin-top:64px}
   h2{font-size:20px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
   h2 .tag{font-size:12px;font-weight:700;color:#fff;background:var(--red);
           padding:3px 9px;border-radius:8px}
@@ -64,6 +65,11 @@
   .stop .st{font-size:12px;font-weight:700;color:var(--red);letter-spacing:.5px}
   .stop .sp{font-size:16px;font-weight:700;margin:2px 0}
   .stop .items{font-size:14px;color:#444;margin-top:2px}
+  .stoplinks{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .stoplinks a{display:inline-flex;align-items:center;gap:4px;
+               background:#f3f7f8;color:var(--sea);border:1px solid #d9e8ea;
+               text-decoration:none;padding:5px 10px;border-radius:8px;font-size:12.5px;font-weight:600}
+  .stoplinks a:active{background:var(--sea);color:#fff}
 
   /* checklist */
   .check li{list-style:none}
@@ -176,26 +182,44 @@
         <div class="st">📍 宋皇臺站</div>
         <div class="sp">聯發茶餐廳 + 地茂館甜品</div>
         <div class="items">🍽️ 落地第一餐 · 港式茶餐廳 + 傳統糖水</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=聯發茶餐廳 九龍城侯王道2號">📍 聯發茶餐廳</a>
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=地茂館甜品 九龍城福佬村道47號">📍 地茂館甜品</a>
+        </div>
       </div>
       <div class="stop">
         <div class="st">📍 旺角站</div>
         <div class="sp">飯店 Check-in · 康得思</div>
         <div class="items">🧳 放行李、稍作休息</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=香港康得思酒店 Cordis Hong Kong">📍 康得思酒店</a>
+        </div>
       </div>
       <div class="stop">
         <div class="st">📍 銅鑼灣站</div>
         <div class="sp">祥興咖啡室</div>
         <div class="items">☕ 港式咖啡室</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=祥興咖啡室 銅鑼灣">📍 祥興咖啡室</a>
+        </div>
       </div>
       <div class="stop">
         <div class="st">📍 中環站</div>
         <div class="sp">摩天輪 + 富豪雪糕 + Vission bakery</div>
         <div class="items">🎡 中環海濱摩天輪 · 🍦 富豪雪糕車 · 🥐 麵包店</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=中環海濱摩天輪 Hong Kong Observation Wheel">📍 摩天輪</a>
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=富豪雪糕車 Mobile Softee Central Hong Kong">📍 富豪雪糕</a>
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Vission Bakery Central Hong Kong">📍 Vission Bakery</a>
+        </div>
       </div>
       <div class="stop">
         <div class="st">📍 堅尼地城站</div>
         <div class="sp">走走 + 新興食家</div>
         <div class="items">🚶 海邊散步 · 🦐 蝦子麵/雲吞</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=新興食家 西環士美菲路8號">📍 新興食家</a>
+        </div>
       </div>
     </div>
   </section>
@@ -208,26 +232,42 @@
         <div class="st">📍 旺角站</div>
         <div class="sp">旺角街景</div>
         <div class="items">🏙️ 女人街 / 波鞋街 / 街市</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=旺角 女人街 Ladies Market">📍 女人街</a>
+        </div>
       </div>
       <div class="stop">
         <div class="st">📍 尖沙咀站</div>
         <div class="sp">祥興記上海生煎包 + 一點心</div>
         <div class="items">🥟 上海生煎 · 🫖 港式點心</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=祥興記上海生煎包 尖沙咀樂道48號">📍 祥興記生煎包</a>
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=一點心 尖沙咀赫德道4號">📍 一點心</a>
+        </div>
       </div>
       <div class="stop">
         <div class="st">📍 中環站</div>
         <div class="sp">叮叮車 + Bakehouse 蛋撻</div>
         <div class="items">🚋 坐叮叮車看街景 · 🥚 排隊蛋撻</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bakehouse Central Hong Kong">📍 Bakehouse 蛋撻</a>
+        </div>
       </div>
       <div class="stop">
         <div class="st">📍 天后站</div>
         <div class="sp">華姐清湯腩</div>
         <div class="items">🍜 招牌清湯牛腩麵</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=華姐清湯腩 香港電氣道13A1">📍 華姐清湯腩</a>
+        </div>
       </div>
       <div class="stop">
         <div class="st">📍 尖沙咀海旁</div>
         <div class="sp">維多利亞港</div>
         <div class="items">🌃 幻彩詠香江燈光秀（每晚 20:00）</div>
+        <div class="stoplinks">
+          <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=尖沙咀星光大道 Victoria Harbour">📍 維多利亞港</a>
+        </div>
       </div>
     </div>
   </section>
